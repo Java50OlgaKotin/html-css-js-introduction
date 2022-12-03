@@ -1,3 +1,11 @@
+@font-face {
+    font-family: lemontuesday;
+    src: url(fonts/Lemon\ Tuesday.otf);
+}
+@font-face {
+    font-family: nautilus;
+    src: url(fonts/Nautilus.otf);
+}
 html {
     height: 100%;
 }
@@ -13,6 +21,8 @@ body {
     text-align: center;
     background-color: rgb(240, 190, 227);
     font-size: 1.2em;
+    color: rgb(36, 2, 37);
+    font-family: lemontuesday;
     text-transform: uppercase;
 }
 .main-class {
@@ -23,13 +33,16 @@ body {
     display: flex;
     flex-direction: column;  
     align-items: center; 
-    background-color: rgb(246, 246, 198);
+    background-color: azure;
 }
 .details-image {
-    width: 50vw;
+    width: 45vw;
 }
 .details-title {
     display: block;
+    text-align: center;
+    font-family: nautilus;
+    color: rgb(90, 5, 93);
 }
 .thumbnails-list {
     display: flex;
@@ -58,43 +71,54 @@ body {
 }
 .thumbnails-title {
     display: block;
+    font-family: nautilus;
+    color: rgb(90, 5, 93);
 }
 
 @media (min-width: 560px) {
     .main-class {
         flex-direction: row;
+        list-style: none;
+        justify-content: space-around;
     }   
     .logo {
-        font-size: medium;
+        font-size: 0.9em;
         margin-top: 0;
         margin-bottom: 0;
     }
+   
     .details-image {
-        height: 33vw;
+        height: 30vw;
         border-radius: 25%;
     }   
+    .details-title {
+        font-size: 1.1em;
+    }
     .details-container {
-        display: block;
-        flex-direction: row;
-        align-items: right; 
+        display: flex;
+        flex-direction: column;  
+        align-items: center; 
+        margin-top: 1vw;
         background-color: azure;
     }
     .thumbnails-list {
         order: -1;
         flex-direction: column;
         flex-wrap: nowrap;
-        max-height: 80vh;
-        min-width: 60vh;
+        max-height: 70vh;
+        min-width: 30vh;
         justify-content: flex-start;
     }
     .thumbnails-item {
         min-height: 9vw;
+        margin-top: 1vw;
+        margin-bottom: 1vw;
     }
     .thumbnails-image {
         width: 10vw;
         height: 7vw;
         border-radius: 50%;
-        margin: 1vw;
+        margin: 2px;
     }
     .thumbnails-title {
      display: block;
