@@ -62,8 +62,8 @@ h2 {
     color: rgb(90, 5, 93);
     background-color: whitesmoke;
     position: absolute;
-    bottom: 1vh;
-    left: -2vw;
+    bottom: 1.5vh;
+    left: 2.5vw;
 }
 .thumbnails-list {
     display: flex;
@@ -130,6 +130,8 @@ h2 {
     }   
     .details-title {
         font-size: 1.1em;
+        bottom: 4vh;
+        left: 2vw;
     }
     .details-container {
         display: flex;
@@ -153,7 +155,4 @@ h2 {
     }
 }
 
-@media (min-width: 1000px) {
-
-}
 
