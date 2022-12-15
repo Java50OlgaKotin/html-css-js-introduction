@@ -39,6 +39,11 @@ h2 {
 .main-class {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    flex-grow: 1;
+}
+.main-class.hidden {
+    justify-content: space-around;
 }
 .details-container {
     display: flex;
@@ -51,6 +56,9 @@ h2 {
     width: var(--details-image-width);
     height: var(--details-image-height);
     border-radius: 25%;
+}
+.hidden .details-container {
+    display: none;
 }
 .details-frame {
     position: relative;
@@ -65,6 +73,11 @@ h2 {
     bottom: 1.5vh;
     left: 2.5vw;
 }
+#hide-button {
+    position: absolute;
+    right: 3vw;
+    top: 2.5vh;
+}
 .thumbnails-list {
     display: flex;
     flex-wrap: wrap;
@@ -74,6 +87,9 @@ h2 {
     justify-content: space-around;
     padding-left: 0;
 }
+.hidden .thumbnails-list {
+    max-height: 60vh;
+}
 .thumbnails-item {
     margin-top: 1vh;
     border-radius: 35%;
@@ -81,6 +97,7 @@ h2 {
     min-height: calc(var(--thumbnails-image-height) + var(--thumbnails-title-height));
     min-width: var(--thumbnails-image-width);
     max-width: var(--thumbnails-image-width);
+    max-height: calc(var(--thumbnails-image-height) + var(--thumbnails-title-height));
     margin-left: 1vw;
 }
 .thumbnails-item:hover {
@@ -149,9 +166,26 @@ h2 {
         padding-right: 2vw;
     }
 
-    .thumbnails-image {
-        width: var(--thumbnails-image-width);
-        height: var(--thumbnails-image-height);
+    .hidden .thumbnails-list {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        max-height: 75vh;
+    }
+}
+@media (min-width: 1000px) {
+    .details-container {
+        margin-top: 5vh;
+        margin-right: 5vw;
+    }
+    
+    .thumbnails-list {     
+        margin-top: 2.5vh;
+        max-height: 86vh;
+    }
+
+    .thumbnails-title {
+        font-size: 1.5em;
     }
 }
 
