@@ -51,6 +51,7 @@ h2 {
     align-items: center; 
     margin-bottom: 1vh;
     background-color: azure;
+    transition: 5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 .details-image {
     width: var(--details-image-width);
@@ -121,6 +122,10 @@ h2 {
     color: rgb(90, 5, 93);
     font-size: 0.75em;
     text-align: center;
+}
+.is-point {
+    transform: scale(0.001);
+    transition: 0ms;
 }
 
 @media (min-width: 560px) {
