@@ -21,14 +21,8 @@ function setDetails(anchor) {
     detailsImage.src = dataImage;
     showDetails();
     detailsTitle.innerHTML = anchor.getAttribute("data-details-title");
-    const color = anchor.getAttribute("data-text-color");
-    if (color) {
-        detailsTitle.style.color = color;
-    } else {
-        detailsTitle.style.color = '';
-    }
-
 }
+
 for (let i = 0; i < anchorElements.length; i++) {
     anchorElements[i].addEventListener("click",function(){
         setDetails(anchorElements[i]);
