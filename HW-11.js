@@ -11,6 +11,8 @@ function getDigitsSum(number)
     if (number < 0)
         number = -number;
 
+        // number = Math.trunc(Math.abs(number));
+
     number = Math.trunc(number);
 
     let sum = 0;
@@ -20,7 +22,7 @@ function getDigitsSum(number)
         sum = sum + rem;
         number = number / 10;
         number = Math.trunc(number);
-    } while(number != 0);
+    } while(number != 0);              //while(number);
 
     return sum;
 }
@@ -29,6 +31,19 @@ function getDigitsSum(number)
 
 let res2 = eval('9000/((10+20)**2)');
 console.log("Task 2. Result of expression: " + res2);
+
+/*
+function commputeExpression(expressionStr){
+    let res
+    try{
+    res = eval(expressionStr);
+    } catch(e) {
+        res = NaN;
+    }
+    return res;
+}
+console.log(...)
+*/
 
 ///// task 3 /////
 
