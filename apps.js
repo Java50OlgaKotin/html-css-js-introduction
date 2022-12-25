@@ -65,3 +65,6 @@ myStr100 = myToString(num100, 36);
 num100 = 123.45;
 str100 = num100.toString(16);
 myStr100 = myToString(num100,16);
+
+const codeA = '0'.charCodeAt();
+const codeA1 = '9'.charCodeAt();

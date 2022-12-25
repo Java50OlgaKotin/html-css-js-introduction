@@ -5,7 +5,7 @@ function myParseInt(str, base) {
     {
         for(let i = 1; i < str.length; i++) {
             let strNum = getCode(str[i], base);
-            if(getCode(str[1]) == -1){
+            if(getCode(str[1], base) == -1){
                 return NaN;
                 break;
             }
@@ -19,7 +19,7 @@ function myParseInt(str, base) {
     else {
         for(let i = 0; i < str.length; i++){
             let strNum = getCode(str[i], base);
-            if(getCode(str[0]) == -1){
+            if(getCode(str[0], base) == -1){
                 return NaN;
                 break;
             }
@@ -34,7 +34,6 @@ function myParseInt(str, base) {
 function getCode(symbol, base) {
     base = base || 10;
     symbol = symbol.toLowerCase();
-    
     if(base <= 10){
         if(symbol <= 9){
             const res = +symbol;
@@ -44,17 +43,30 @@ function getCode(symbol, base) {
         }
     }
 
-    if(base > 10 && base <= 36){
+    if(base > 10){
         const codeA = 'a'.charCodeAt();
-        const res = symbol <= '9'? +symbol : symbol.charCodeAt() - codeA + 10;
-        return res;
+        let symbolCode = symbol.charCodeAt();
+        if(symbolCode >= 48 && symbolCode <= 57){
+            const res = +symbol;
+            return res;
+        }
+        if(symbolCode >= 97 && symbolCode < (codeA + base - 10)){
+            const res = symbol.charCodeAt() - codeA + 10;
+            return res;
+        }else{
+            return -1;
+        }
     }
 }
 
-let str1 = "-123a.8";
+let str1 = "-f123.m";
 let num = parseInt(str1, 16);
 let myNum = myParseInt(str1, 16);
-console.log(myNum);
+console.log("Input: " + str1);
+console.log("Output. ParseInt: " + num);
+console.log("Output. MyParseInt: " + myNum);
+console.log("*****************************");
+
 
 /////***************/////
 
@@ -77,6 +89,7 @@ function myToString(number, base) {
 
     }while(intNumber);
 
+    if(frNumber >= 0){
     do {
         const digit = frNumber % base;
         const symbol = getSymbol(digit);
@@ -84,8 +97,9 @@ function myToString(number, base) {
         frNumber = Math.trunc(frNumber / base);
 
     }while(frNumber);
-
     return minus + resInt + "." + resFr;
+    }
+    else return minus + resInt;
 }
 function getSymbol(digit) {
     const codeA = 'a'.charCodeAt();
@@ -98,6 +112,9 @@ function getSymbol(digit) {
    }
    return symbol;
 }
-let num100 = -990.5708;
+let num100 = -99076.395;
 let str = num100.toString();
 let myStr = myToString(num100);
+console.log("Input: " + num100);
+console.log("Output. String: " + str);
+console.log("Output. MyString: " + myStr);
