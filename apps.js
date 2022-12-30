@@ -1,70 +1,50 @@
-/*let str = "123m";
-let num = parseInt(str) + 10;
-let str1 = "123";
-let numInt = parseInt(str1);
-let numFloat = parseFloat(str1);*/
+/*const ar = [];
+const ar1 = [1,2,3,4];
+ar.push(ar1);
+ar.push(34,'abc');
+ar.push(...ar1);*/
 
-function myParseInt(str, base) {
-base = base || 10;
-let res = 0;
-for(let i = 0; i < str.length; i++){
-    res = res * base + getCode(str[i]);
-
+function getRandomNumber(min, max) {
+    min = Math.trunc(min);
+    max = Math.trunc(max);
+    return min + Math.trunc(Math.random() * (max - min + 1));
 }
-return res;
-}
-
-function getCode(symbol){
-    symbol = symbol.toLowerCase();
-    const codeA = 'a'.charCodeAt();
-    const res = symbol <= '9'? +symbol : symbol.charCodeAt() - codeA + 10;
-    return res;
-}
-let str1 = "123a";
-let num = parseInt(str1, 36);
-let myNum = myParseInt(str1, 36);
-
-
-/////////////////////
-
-let number = 255;
-let str = "" + number;
-str = number.toString(36);
-
-function myToString(number, base){
-    let res = "";
-    base = base || 10;
-    number = Math.trunc(Math.abs(number));
-    do {
-        const digit = number % base;
-        const symbol = getSymbol(digit, base);
-        res = symbol + res;
-        number = Math.trunc(number / base);
-
-    }while(number);
-    return res;
+for(let i = 0; i < 10; i++) {
+console.log(getRandomNumber(0, 2));
 }
 
-function getSymbol(digit, base){
-    const codeA = 'a'.charCodeAt();
-    let symbol;
-    if(digit < 10) {
-        symbol = "" + digit;
-    } else {
-        const codeAscii = digit - 10 + codeA;
-        symbol = String.fromCharCode(codeAscii);
+function getRandomMatrix(rows, columns, min, max) {
+    const matrix = [];
+    for(let i = 0; i < rows; i++) {
+        matrix.push([]);
+        for(let j = 0; j < columns; j++) {
+            matrix[i].push(getRandomNumber(min, max));
+        }
     }
-    return symbol;
+
+    return matrix;
 }
 
-let num100 = 990500;
-let str100 = num100.toString();
-let myStr100 = myToString(num100);
-str100 = num100.toString(36);
-myStr100 = myToString(num100, 36);
-num100 = 123.45;
-str100 = num100.toString(16);
-myStr100 = myToString(num100,16);
+const matrix = getRandomMatrix(3, 4, 0, 9);
+/*for(let i = 0; i < matrix.length; i++) {
+    for(let j = 0; j < )
+}*/
 
-const codeA = '0'.charCodeAt();
-const codeA1 = '9'.charCodeAt();
+
+const ar10 = [1,2,3,4,5];
+const srt = ar10.join('_');
+
+/*
+<ul class="list_class"><li class="item_class"><div class="white/black"></div> **** </li></ul>
+function getHtmlUl(array)
+
+return htmlString;
+*/
+const strClass = getRandomNumber(0, 1) === 0 ? `white` : `black`;
+const str1 = "hello world";
+const str2 = 'hello' + 'world';
+const str3 = `Class = "${strClass}"`;
+
+function matrixTransp(matrix) {
+    
+}

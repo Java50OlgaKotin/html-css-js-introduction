@@ -112,8 +112,8 @@ function getSymbol(digit) {
    }
    return symbol;
 }
-let num100 = -99076.395;
-let str = num100.toString();
+let num100 = 1.1;
+let str = num100.toString(16);
 let myStr = myToString(num100);
 console.log("Input: " + num100);
 console.log("Output. String: " + str);
