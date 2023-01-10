@@ -16,7 +16,7 @@ ar1.sort(function(e1, e2) {
 console.log(`result of sorting [123, 9, 28, 3, 44] is ${ar1}`);
 
 ////////////////////////
-*/
+
 function sum(array) {
     const res = array.reduce(function(res, cur) {
         return res + cur;
@@ -24,6 +24,17 @@ function sum(array) {
     return res;
 }
 console.log(`sum([1,2,3,4,5]) is ${sum([1,2,3,4,5])}`);
-
-
-
+*/
+function getMin(array) {
+    const res = array.reduce(function(res, cur) {
+        if(res <= cur) {
+            res = res;
+        } else {res = cur};
+        return res;
+    });
+    return res;
+}
+const arrays = [[1, 2, 3, 4, 5], [6, 7, 8, 9, 10], [200, -5, -88, 7, 66]];
+arrays.forEach(function(array){
+    console.log(`Min in array is ${getMin(array)}`);
+})
