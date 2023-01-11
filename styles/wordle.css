@@ -1,23 +1,43 @@
 .logo {
+    display: block;   
     margin-top: 3vh;
-    height: 5vw;
-    text-align: center;
+    margin-left: 15vh;
+    height: 3vw;
     font-size: 2em;
 }
-
+.guess-input {
+    display: block;   
+    margin-left: 5vh;
+    height: 2.5vw;
+    width: 40vh;
+    font-size: 1.5em;
+}
 .guess-letters {
     margin-top: 3vh;
     display: flex;
+    margin-left: 5vh;
     text-align: center;
     flex-direction: row;
 }
 .game-status {
+    margin-left: 5vh;
+    display: flex;
+    flex-direction: column;
+    font-size: 1.2em;
+}
+.game-result {
     margin-top: 3vh;
     display: flex;
+    font-size: 1.5em;
     flex-direction: column;
 }
 .play-again {
-    display: flex;
+    display: block;
+    width: 40vh;
+    background-color: rgb(131, 223, 136);
+    border: 1px solid black;
+    text-align: center;
+    font-size: 1.5em;
 }
 .letter {
     width: 5vw;

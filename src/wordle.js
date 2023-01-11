@@ -14,13 +14,15 @@ let word;
 
 //functions
 function startGame() {
+    guessInputElement.value = '';
+    trialsElement.style.display = "inline-block";
     word = getWord();
     fillLettersDivs();
     flGameOver = false;
     trials = word.length + 1;
     playAgainElement.style.display = "none";
     gameResultElement.innerHTML = "";
-    trialsElement.innerHTML = `remained trials ${trials}`;
+    trialsElement.innerHTML = `Remained trials ${trials}`;
 }
 
 function getWord() {
@@ -39,16 +41,16 @@ function fillLettersDivs() {
 
 function onChange() {
     if(flGameOver) {
-        alert("game is over, press play-again");
+        alert("Game is over, press play-again");
     } else { 
         const trialWord = guessInputElement.value;
         trials--;
-        if(trials == 0) {
+        if(trials === 0) {
             finishGame();
         }
-        trialsElement.innerHTML = `remained trials ${trials}`;
+        trialsElement.innerHTML = `Remained trials ${trials}`;
         if(trialWord.length != word.length) {
-            alert("wrong number of letters");
+            alert("Wrong number of letters");
         } else {
             coloringWord(trialWord);
         }
@@ -76,9 +78,13 @@ function getColor(letter, index) {
 }
 
 function finishGame() {
+    trialsElement.style.display = "none";
     if(trials != 0){
-        trialsElement.innerHTML = `You won the game in ${trials} trials`;
-        
+        gameResultElement.innerHTML = `You've won the game in ${(word.length + 1 - trials)} trials :)`;
+        playAgainElement.style.display = "inline-block";
+    } else {
+        gameResultElement.innerHTML = `You've lost. Game is over :(`;
+        playAgainElement.style.display = "inline-block";
     }
 }
 
