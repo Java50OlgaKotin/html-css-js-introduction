@@ -1,0 +1,29 @@
+.logo {
+    margin-top: 3vh;
+    height: 5vw;
+    text-align: center;
+    font-size: 2em;
+}
+
+.guess-letters {
+    margin-top: 3vh;
+    display: flex;
+    text-align: center;
+    flex-direction: row;
+}
+.game-status {
+    margin-top: 3vh;
+    display: flex;
+    flex-direction: column;
+}
+.play-again {
+    display: flex;
+}
+.letter {
+    width: 5vw;
+    height: 5vw;
+    background-color: rgb(212, 212, 212);
+    border: 1px solid black;
+    text-align: center;
+    font-size: 2em;
+}
