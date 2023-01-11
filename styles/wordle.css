@@ -1,16 +1,17 @@
-.logo {
+body {
+    background-color: rgb(161, 204, 159);
+}.logo {
     display: block;   
     margin-top: 3vh;
     margin-left: 15vh;
     height: 3vw;
-    font-size: 2em;
+    font-size: 3em;
 }
 .guess-input {
-    display: block;   
+    display: flex;   
     margin-left: 5vh;
     height: 2.5vw;
-    width: 40vh;
-    font-size: 1.5em;
+    font-size: 1.2em;
 }
 .guess-letters {
     margin-top: 3vh;
@@ -34,16 +35,16 @@
 .play-again {
     display: block;
     width: 40vh;
-    background-color: rgb(131, 223, 136);
+    background-color: rgb(131, 176, 223);
     border: 1px solid black;
     text-align: center;
     font-size: 1.5em;
 }
 .letter {
     width: 5vw;
-    height: 5vw;
-    background-color: rgb(212, 212, 212);
+    height: 4vw;
+    background-color: grey;
     border: 1px solid black;
     text-align: center;
-    font-size: 2em;
+    font-size: 1.5em;
 }
