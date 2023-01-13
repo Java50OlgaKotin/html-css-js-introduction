@@ -7,12 +7,12 @@ const wordElement = document.querySelector(".word");
 const resultMessage = document.getElementById("result-message");
 const playAgain = document.getElementById("play-again");
 let wordLettersElement;
-let initialLettersNumber;
+let initialLettersNumber = 0;
 let remaindLettersNumber;
 let lettersDivs;
 
 // global variables
-const questionsWords = [["q1", "atryeue"], ["q2", "ffssd"]];
+const questionsWords = [["q1", "table"], ["q2", "ffssd"]];
 let currentIndex = 0;
 let word;
 
@@ -27,6 +27,9 @@ function startGame() {
     wordInputElement.value = '';
     wordInputElement.readOnly = true;
     letterInputElement.value ='';
+    remaindLettersNumber = Math.trunc(arrayWord.length - (30*arrayWord.length/100))
+    lettersRemainedElement.innerHTML = `You can enter ${remaindLettersNumber} letters`;
+
 }
 function getWordDivs() {
     arrayWord = Array.from(word);
@@ -37,6 +40,17 @@ function getWordDivs() {
     lettersDivs = document.querySelectorAll(".letter");
 }
 function checkWord() {
+    wordInputElement.style.backgroundColor = "lightblue";
+    if(wordInputElement.value === word) {
+        resultMessage.style.color = "blue";
+        resultMessage.innerHTML = "Congratulations! You have won the game! :)";    
+        playAgain.style.display = "block";    
+    }   
+    if(wordInputElement.value !=0 && wordInputElement.value != word) {
+        resultMessage.style.color = "red";
+        resultMessage.innerHTML = "Sorry, it's a wrong word :(";
+        playAgain.style.display = "block";
+    }
 
 }
 function processLetter() {
@@ -48,12 +62,19 @@ function processLetter() {
             lettersDivs[i].style.color = "white";
         }
     }
+    remaindLettersNumber--;
+    lettersRemainedElement.innerHTML = `You can enter ${remaindLettersNumber} letters`;
+    if(remaindLettersNumber === 0){
+        lettersRemainedElement.innerHTML = `No attempts left. You have to try to guess the word.`;
+        letterInputElement.readOnly = true;
+        checkWord();
+    }
     letterInputElement.value ='';
-}  
-        
-
+}          
 function takeChance() {
     wordInputElement.readOnly = false;
+    letterInputElement.readOnly = true;
+    checkWord();
 }
 function finishGame() {
 

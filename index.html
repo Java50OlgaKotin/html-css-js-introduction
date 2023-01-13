@@ -13,14 +13,14 @@
     </header>
     <section class="field">
         <p id="question"></p>
+        <section class="word">
+        </section>
         <input type="text" readonly onchange="checkWord()" id="word-input" placeholder="enter word">
-        <button onclick="takeChance()" id="guess-button">Check the word</button>
         <p id="letters-remained"></p>
-        <input type="text" minlength="1" maxlength="1" onchange="processLetter()" id="letter-input" placeholder="enter letter"> 
+        <input type="text" minlength="1" maxlength="1" onchange="processLetter()" id="letter-input" placeholder="enter letter">
+        <section> <button onclick="takeChance()" id="guess-button">Guess the word</button> </section>
     </section>
-    <section class="word">
 
-    </section>
     <section class="result">       
         <p id="result-message"></p>
         <button onclick="startGame()" id="play-again">Play again</button>
