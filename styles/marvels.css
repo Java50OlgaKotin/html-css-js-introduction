@@ -5,6 +5,8 @@
 }
 .letter {
     margin-left: 1vw;
+    font-size: 3em;
+    text-align: center;
     background-color: black;
     color: black;
     width: 5vw;

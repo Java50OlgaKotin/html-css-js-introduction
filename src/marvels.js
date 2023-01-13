@@ -42,10 +42,15 @@ function checkWord() {
 function processLetter() {
     wordInputElement.readOnly = false;   
     const trialLetter = letterInputElement.value;   
-    if(word.includes(trialLetter)) {
-        
-    }  
+    for(let i=0; i < arrayWord.length; i++) {
+        if(arrayWord[i] === trialLetter) {
+            lettersDivs[i].innerHTML = trialLetter;
+            lettersDivs[i].style.color = "white";
         }
+    }
+    letterInputElement.value ='';
+}  
+        
 
 function takeChance() {
     wordInputElement.readOnly = false;
