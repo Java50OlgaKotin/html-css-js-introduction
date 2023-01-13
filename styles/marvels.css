@@ -1,11 +1,12 @@
 .word {
     display: flex;
+    margin-top: 3vw;
 
 }
 .letter {
     margin-left: 1vw;
     background-color: black;
     color: black;
-    width: 4vw;
-    height: 4vw;
+    width: 5vw;
+    height: 7vw;
 }
