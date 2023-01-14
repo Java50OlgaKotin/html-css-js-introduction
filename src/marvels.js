@@ -18,6 +18,8 @@ let word;
 
 // functions
 function startGame() {
+    
+    letterInputElement.readOnly = false;
     word = questionsWords[currentIndex][1];
     const arrayWord = Array.from(word);
     getWordDivs();
@@ -39,22 +41,7 @@ function getWordDivs() {
     },'');
     lettersDivs = document.querySelectorAll(".letter");
 }
-function checkWord() {
-    wordInputElement.style.backgroundColor = "lightblue";
-    if(wordInputElement.value === word) {
-        resultMessage.style.color = "blue";
-        resultMessage.innerHTML = "Congratulations! You have won the game! :)";    
-        playAgain.style.display = "block";    
-    }   
-    if(wordInputElement.value !=0 && wordInputElement.value != word) {
-        resultMessage.style.color = "red";
-        resultMessage.innerHTML = "Sorry, it's a wrong word :(";
-        playAgain.style.display = "block";
-    }
-
-}
 function processLetter() {
-    wordInputElement.readOnly = false;   
     const trialLetter = letterInputElement.value;   
     for(let i=0; i < arrayWord.length; i++) {
         if(arrayWord[i] === trialLetter) {
@@ -72,12 +59,39 @@ function processLetter() {
     letterInputElement.value ='';
 }          
 function takeChance() {
-    wordInputElement.readOnly = false;
     letterInputElement.readOnly = true;
     checkWord();
 }
-function finishGame() {
+function checkWord() {
+    wordInputElement.readOnly = false;
+    wordInputElement.style.backgroundColor = "lightblue";
+    if(wordInputElement.value === word) {
+        resultMessage.style.color = "blue";
+        
+        arrayWord.forEach(function(letter, index){
+            lettersDivs[index].innerHTML = letter;
+            lettersDivs[index].style.color = "white";
+        })
 
+        resultMessage.innerHTML = "Congratulations! You have won the game! :)"; 
+        finishGame()   
+    }   
+    if(wordInputElement.value !=0 && wordInputElement.value != word) {
+        resultMessage.style.color = "red";
+        resultMessage.innerHTML = "Sorry, it's a wrong word :(";
+        finishGame()
+    }  
+}
+function finishGame() {
+    wordInputElement.readOnly = true;
+    wordInputElement.style.backgroundColor = "white";
+    wordInputElement.value = '';
+    if(currentIndex === (questionsWords.length - 1)) {
+        currentIndex = 0;
+    } else {    
+        currentIndex++;
+    }
+    playAgain.style.display = "block";
 }
 
 //actions
