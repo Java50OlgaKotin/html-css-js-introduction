@@ -12,7 +12,20 @@ let remaindLettersNumber;
 let lettersDivs;
 
 // global variables
-const questionsWords = [["q1", "table"], ["q2", "ffssd"]];
+const questionsWords = [["A person skilled in an applied art", "craftsman"], 
+["A picture made using paint", "painting"], 
+["Tv or radio transmission", "broadcast"], 
+["What is the name of science for promotion of the goods", "marketing"], 
+["A study about interactions among organisms and environvent", "ecology"], 
+["Knowledge and skill that is gained through time spent doing a job or activity", "experience"], 
+["A change of biological populations over successive generations", "evolution"], 
+["What wood are matches made from", "aspen"], 
+["A Greek who have burned down the Temple of Artemis of Ephesus", "herostratus"], 
+["Hard surface, ground under the water of a reservoir", "bottom"], 
+["Last month of winter", "february"], 
+["Plot of land used for growing fruit trees", "garden"], 
+["African wild horse, characterized by a characteristic striped color of the skin", "zebra"]];
+
 let currentIndex = 0;
 let word;
 
