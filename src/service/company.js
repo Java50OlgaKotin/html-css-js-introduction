@@ -1,6 +1,4 @@
- 
-/* HW #21 */
-// Employe structure and function createEmployee() taken from previous HW
+
 export function createEmployee(id, name, birthYear, salary, city, country) {
     return {id, name, birthYear, salary, address: {city, country}}
 }

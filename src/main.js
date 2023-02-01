@@ -11,6 +11,6 @@ function addEmployee(employeeData) {
         +employeeData.birthYear, +employeeData.salary,
         employeeData.city, employeeData.country);
     company.addEmployee(employee);
-    console.log(employee)
+    console.log(employee);
 }
 employeeForm.addFormHandler(addEmployee)
